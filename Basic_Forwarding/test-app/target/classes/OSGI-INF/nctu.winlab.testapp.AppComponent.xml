@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="nctu.winlab.testapp.AppComponent" activate="activate" deactivate="deactivate">
+    <service servicefactory="false">
+        <provide interface="nctu.winlab.testapp.AppComponent"/>
+    </service>
+    <reference name="coreService" interface="org.onosproject.core.CoreService" cardinality="1..1" policy="static" bind="bindCoreService" unbind="unbindCoreService"/>
+    <reference name="packetService" interface="org.onosproject.net.packet.PacketService" cardinality="1..1" policy="static" bind="bindPacketService" unbind="unbindPacketService"/>
+    <reference name="storageService" interface="org.onosproject.store.service.StorageService" cardinality="1..1" policy="static" bind="bindStorageService" unbind="unbindStorageService"/>
+    <reference name="flowObjectiveService" interface="org.onosproject.net.flowobjective.FlowObjectiveService" cardinality="1..1" policy="static" bind="bindFlowObjectiveService" unbind="unbindFlowObjectiveService"/>
+    <implementation class="nctu.winlab.testapp.AppComponent"/>
+</scr:component>
